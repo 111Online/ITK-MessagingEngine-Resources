@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://services.nhsdirect.nhs.uk/" xmlns:s1="http://microsoft.com/wsdl/types/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://services.nhsdirect.nhs.uk/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://services.nhsdirect.nhs.uk/">
+      <s:import namespace="http://microsoft.com/wsdl/types/" />
+      <s:element name="SubmitEnquiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="enq" type="tns:OesEnquiry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OesEnquiry">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Secure" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Dob" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ethnicity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Enquiry" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LevelOfInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MedsInfo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Subject" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CanContact" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitEnquiryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitEnquiryResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="CallResult">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitEnquiryWithoutAvailabilityCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="enq" type="tns:OesEnquiry" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitEnquiryWithoutAvailabilityCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitEnquiryWithoutAvailabilityCheckResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOESRefs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="request" type="tns:OesAnswerRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OesAnswerRequest">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Guid" type="s1:guid" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EnquiryPassword" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetOESRefsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOESRefsResult" type="tns:OesRefs" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="OesRefs">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReferenceText" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="IsEnabled">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsEnabledResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IsEnabledResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableService">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="partner" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="enable" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableServiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableServiceResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetWhoFors">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetWhoForsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetWhoForsResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEthnicities">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetEthnicitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEthnicitiesResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitMember">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="member" type="tns:Member" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Member">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Title" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="DOB" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Address" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="City" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Ethnicity" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PreferredContactMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EmailAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="HomePhone" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BeInvolved" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PatientPanels" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ReceiveSMS" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="PublicRegister" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="ShareDetails3rdParty" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="NHSStaff" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Disability" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="HowDidYouHearAboutThis" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MobilePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="OfficePhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Fax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SpecificRequirements" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitMemberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitMemberResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitContactUs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:ContactUsMessage" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ContactUsMessage">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ResponseRequired" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ContactAddress" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Postcode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitContactUsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitContactUsResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubmitUsefulInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="tns:UsefulInfoFeedback" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UsefulInfoFeedback">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Partner" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartnerPassword" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="UsefulInfo" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PageLocation" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SubmitUsefulInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubmitUsefulInformationResult" type="tns:CallResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
+      <s:simpleType name="guid">
+        <s:restriction base="s:string">
+          <s:pattern value="[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}" />
+        </s:restriction>
+      </s:simpleType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SubmitEnquirySoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitEnquiry" />
+  </wsdl:message>
+  <wsdl:message name="SubmitEnquirySoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitEnquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitEnquiryWithoutAvailabilityCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitEnquiryWithoutAvailabilityCheck" />
+  </wsdl:message>
+  <wsdl:message name="SubmitEnquiryWithoutAvailabilityCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitEnquiryWithoutAvailabilityCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOESRefsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOESRefs" />
+  </wsdl:message>
+  <wsdl:message name="GetOESRefsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOESRefsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsEnabledSoapIn">
+    <wsdl:part name="parameters" element="tns:IsEnabled" />
+  </wsdl:message>
+  <wsdl:message name="IsEnabledSoapOut">
+    <wsdl:part name="parameters" element="tns:IsEnabledResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableServiceSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableService" />
+  </wsdl:message>
+  <wsdl:message name="EnableServiceSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetWhoForsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetWhoFors" />
+  </wsdl:message>
+  <wsdl:message name="GetWhoForsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetWhoForsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEthnicitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEthnicities" />
+  </wsdl:message>
+  <wsdl:message name="GetEthnicitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEthnicitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMemberSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitMember" />
+  </wsdl:message>
+  <wsdl:message name="SubmitMemberSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitMemberResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitContactUsSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitContactUs" />
+  </wsdl:message>
+  <wsdl:message name="SubmitContactUsSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitContactUsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubmitUsefulInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:SubmitUsefulInformation" />
+  </wsdl:message>
+  <wsdl:message name="SubmitUsefulInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:SubmitUsefulInformationResponse" />
+  </wsdl:message>
+  <wsdl:portType name="NHSDWebServicesSoap">
+    <wsdl:operation name="SubmitEnquiry">
+      <wsdl:input message="tns:SubmitEnquirySoapIn" />
+      <wsdl:output message="tns:SubmitEnquirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitEnquiryWithoutAvailabilityCheck">
+      <wsdl:input message="tns:SubmitEnquiryWithoutAvailabilityCheckSoapIn" />
+      <wsdl:output message="tns:SubmitEnquiryWithoutAvailabilityCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOESRefs">
+      <wsdl:input message="tns:GetOESRefsSoapIn" />
+      <wsdl:output message="tns:GetOESRefsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsEnabled">
+      <wsdl:input message="tns:IsEnabledSoapIn" />
+      <wsdl:output message="tns:IsEnabledSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableService">
+      <wsdl:input message="tns:EnableServiceSoapIn" />
+      <wsdl:output message="tns:EnableServiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWhoFors">
+      <wsdl:input message="tns:GetWhoForsSoapIn" />
+      <wsdl:output message="tns:GetWhoForsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEthnicities">
+      <wsdl:input message="tns:GetEthnicitiesSoapIn" />
+      <wsdl:output message="tns:GetEthnicitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMember">
+      <wsdl:input message="tns:SubmitMemberSoapIn" />
+      <wsdl:output message="tns:SubmitMemberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitContactUs">
+      <wsdl:input message="tns:SubmitContactUsSoapIn" />
+      <wsdl:output message="tns:SubmitContactUsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubmitUsefulInformation">
+      <wsdl:input message="tns:SubmitUsefulInformationSoapIn" />
+      <wsdl:output message="tns:SubmitUsefulInformationSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="NHSDWebServicesSoap" type="tns:NHSDWebServicesSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitEnquiry">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitEnquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitEnquiryWithoutAvailabilityCheck">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitEnquiryWithoutAvailabilityCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOESRefs">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/GetOESRefs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEnabled">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/IsEnabled" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableService">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/EnableService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWhoFors">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/GetWhoFors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEthnicities">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/GetEthnicities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMember">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitMember" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitContactUs">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitContactUs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitUsefulInformation">
+      <soap:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitUsefulInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="NHSDWebServicesSoap12" type="tns:NHSDWebServicesSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SubmitEnquiry">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitEnquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitEnquiryWithoutAvailabilityCheck">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitEnquiryWithoutAvailabilityCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOESRefs">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/GetOESRefs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsEnabled">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/IsEnabled" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableService">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/EnableService" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWhoFors">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/GetWhoFors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEthnicities">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/GetEthnicities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitMember">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitMember" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitContactUs">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitContactUs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubmitUsefulInformation">
+      <soap12:operation soapAction="http://services.nhsdirect.nhs.uk/SubmitUsefulInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="NHSDWebServices">
+    <wsdl:port name="NHSDWebServicesSoap" binding="tns:NHSDWebServicesSoap">
+      <soap:address location="https://services.nhsdirect.nhs.uk/PreviewWebServices_v1_2/NHSDWebServices.asmx" />
+    </wsdl:port>
+    <wsdl:port name="NHSDWebServicesSoap12" binding="tns:NHSDWebServicesSoap12">
+      <soap12:address location="https://services.nhsdirect.nhs.uk/PreviewWebServices_v1_2/NHSDWebServices.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

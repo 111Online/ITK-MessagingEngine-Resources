@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Records>
+	<Row Postcode="S60 1RY" ServiceId="1358851686" Name="NOT ON UAT WHITELIST" OdsCode="Y0128701" Address="NOT ON UAT WHITELIST" ServicePostcode="S60 1RY"/>
+	<Row Postcode="W10 6DZ" ServiceId="1345754835" Name="GP Out of Hours: London Central West" OdsCode="1345754835" Address="Test St Charles Hospital, Exmoor Street, London" ServicePostcode="W10 6DZ"/>
+	<Row Postcode="SE22 8PT" ServiceId="1381760094" Name="GP OOH: SelDoc, Lambeth, Lewisham and Southwark, London TEST" OdsCode="1381760094" Address="East Dulwich Grove, London" ServicePostcode="SE22 8PT"/>
+	<Row Postcode="NW1 0PE" ServiceId="1402400963" Name="Care UK Camden" OdsCode="1402400963" Address="TEST RECORD" ServicePostcode="NW1 0PE"/>
+	<Row Postcode="HA0 4UZ" ServiceId="1352417005" Name="Care UK Brent" OdsCode="1352417005" Address="Chaplin Road Wembley" ServicePostcode="HA0 4UZ"/>
+	<Row Postcode="UB2 5NH" ServiceId="1352475946" Name="Care UK Ealing" OdsCode="1352475946" Address="Twickenham Road Isleworth" ServicePostcode="UB2 5NH"/>
+	<Row Postcode="HA1 3UJ" ServiceId="1352474617" Name="Care UK Harrow" OdsCode="1352474617" Address="Twickenham Road Isleworth" ServicePostcode="HA1 3UJ"/>
+	<Row Postcode="UB8 3NN" ServiceId="1345199173" Name="Care UK Hillingdon" OdsCode="1345199173" Address="Harmoni - Hillingdon PCC Pield Heath Road, Hillingdon, Middlesex" ServicePostcode="UB8 3NN"/>
+	<Row Postcode="TW7 6AF" ServiceId="1352418434" Name="Care UK Hounslow" OdsCode="1352418434" Address="Twickenham Road Isleworth" ServicePostcode="TW7 6AF"/>
+	<Row Postcode="KT6 6EN" ServiceId="1351202635" Name="Care UK Kingston" OdsCode="1351202635" Address="Oak Hill Road Surbiton" ServicePostcode="KT6 6EN"/>
+	<Row Postcode="CR4 3DA" ServiceId="1381321570" Name="Care UK Merton" OdsCode="1381321570" Address="Cricket Green Medical Practice 75 – 79 Miles Road Mitcham Surrey" ServicePostcode="CR4 3DA"/>
+	<Row Postcode="SW17 0QT" ServiceId="1350400205" Name="Care UK Wands" OdsCode="1350400205" Address="Blackshaw Road London" ServicePostcode="SW17 0QT"/>
+	<Row Postcode="CR7 7YE" ServiceId="1381318866" Name="Virgin Care" OdsCode="1381318866" Address="Croydon University Hospital 530 London Road Croydon" ServicePostcode="CR7 7YE"/>
+	<Row Postcode="SM5 1AA" ServiceId="1381764556" Name="GP OOH: SelDoc, Sutton, London" OdsCode="1381764556" Address="Wrythe Lane, Carshalton" ServicePostcode="SM5 1AA"/>
+	<Row Postcode="BR6 8ND" ServiceId="1381762298" Name="Emdoc" OdsCode="1381762298" Address="Farnborough Common, Orpington" ServicePostcode="BR6 8ND"/>
+	<Row Postcode="SE18 4LP" ServiceId="1381762945" Name="Grabadoc" OdsCode="1381762945" Address="Shooters Hill Road, London" ServicePostcode="SE18 4LP"/>
+	<Row Postcode="RM10 9SR" ServiceId="1406034834" Name="PELC Barking and Dag" OdsCode="1406034834" Address="John Parker Close, Dagenham" ServicePostcode="RM10 9SR"/>
+	<Row Postcode="RM7 0AG" ServiceId="1406035611" Name="PELC Havering" OdsCode="1406035611" Address="Rom Valley Way, Romford" ServicePostcode="RM7 0AG"/>
+	<Row Postcode="IG3 8YB" ServiceId="1406035979" Name="PELC Redbridge" OdsCode="1406035979" Address="Barley Lane, Ilford" ServicePostcode="IG3 8YB"/>
+	<Row Postcode="IG1 2FA" ServiceId="1406036145" Name="PELC Waltham For" OdsCode="1406036145" Address="Ilford Hill, Ilford" ServicePostcode="IG1 2FA"/>
+	<Row Postcode="EC1V 2QH" ServiceId="1406037611" Name="Care UK Islington" OdsCode="1406037611" Address="City Road, London" ServicePostcode="EC1V 2QH"/>
+	<Row Postcode="N3 2DN" ServiceId="1406036881" Name="Barndoc Barnet" OdsCode="1406036881" Address="Ballards Lane, London" ServicePostcode="N3 2DN"/>
+	<Row Postcode="N15 6QP" ServiceId="1406037081" Name="Barndoc Haringey" OdsCode="1406037081" Address="St. John's Road, London" ServicePostcode="N15 6QP"/>
+	<Row Postcode="EN4 0DR" ServiceId="1406037001" Name="Barndoc Enfield" OdsCode="1406037001" Address="Cockfosters Road, Barnet" ServicePostcode="EN4 0DR"/>
+</Records>

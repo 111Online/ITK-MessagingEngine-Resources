@@ -1,0 +1,1234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 (x64) (http://www.altova.com) by Martin Tapp (Advanced Health and Care) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://nhspathways.org/webservices/pathways/pathwaysCase" targetNamespace="http://nhspathways.org/webservices/pathways/pathwaysCase" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="PathwaysCase">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="dispositionOverrideCode" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="code" type="xs:string"/>
+							<xs:element name="reason" type="xs:string" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="appointment" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="appointmentRef" type="xs:string"/>
+							<xs:element name="attributableDelay" type="xs:boolean" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="serviceDestination">
+					<xs:annotation>
+						<xs:documentation>This element will be used to identify organisations which share the same Endpoints</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The name of the service destination</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="code" type="xs:string">
+								<xs:annotation>
+									<xs:documentation>A code uniquely identifying the destination service. this should be the same code as looked up from CMS/CLI Mappings/Other Directory of Service as used by the system</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="messageStatus">
+					<xs:annotation>
+						<xs:documentation>Status to signify if it's a complete message or a partial message</xs:documentation>
+					</xs:annotation>
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="PartialExpectingUpdate"/>
+							<xs:enumeration value="Complete"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:element>
+				<xs:element name="caseReceiveStart" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>The date and time the call handler answered the phone</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="caseReceiveEnd" type="xs:dateTime" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The date and time the case was dispatched to the system</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="outcome" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This element group contains details of the type of clinical care required.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="title" type="xs:string" minOccurs="0"/>
+							<xs:element name="code">
+								<xs:annotation>
+									<xs:documentation>This field can hold either Output Disposition codes at the end of triage or operational codes where pathways triage was either not performed or overriden.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string"/>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="caseDetails">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="caseRef">
+								<xs:annotation>
+									<xs:documentation>Unique reference number/id of the case</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="40"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="caseId" type="xs:string" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The identifier, as used by staff at the sending site for this particular case. This can be left blank if only caseRef is in use.</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="address" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Patient's current location address</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="building">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="street">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="locality">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="town">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="county">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="postcode">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="15"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="mapRef" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="longitude" minOccurs="0"/>
+													<xs:element name="latitude" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="country" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string"/>
+													<xs:element name="isoAlpha2">
+														<xs:annotation>
+															<xs:documentation>Iso Code of the country</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="2"/>
+																<xs:maxLength value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="directions" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Any directions to the patient’s current location address</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="512"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="condition">
+								<xs:annotation>
+									<xs:documentation>Patient's reported current condition.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="512"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="contactDetails">
+								<xs:annotation>
+									<xs:documentation>It is expected either the caller or patient contact details will be specified.</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:choice maxOccurs="unbounded">
+										<xs:element name="caller" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Details of the caller. These should only be populated if the caller is not the patient.</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="45"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="phone" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>The caller's contact phone number</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="prefix" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>Prefix to be used with the number. E.g. 18002 for typetalk.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="0"/>
+																			<xs:maxLength value="6"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="number">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="0"/>
+																			<xs:maxLength value="23"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+																<xs:element name="extension" minOccurs="0">
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:minLength value="0"/>
+																			<xs:maxLength value="6"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="patientPhone" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>The patient's current location phone number</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="prefix" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Prefix to be used with the number. E.g. 18002 for typetalk.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="number">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="23"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+													<xs:element name="extension" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="0"/>
+																<xs:maxLength value="6"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="patient" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ref" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Unique reference number/id of the patient</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="1"/>
+										<xs:maxLength value="40"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="forename" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="45"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="surname" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="45"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="address" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The patient's home address</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="building">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="street">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="locality">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="town">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="county">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="55"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="postcode">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="15"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="mapRef" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="longitude" minOccurs="0"/>
+													<xs:element name="latitude" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="country" minOccurs="0">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string"/>
+													<xs:element name="isoAlpha2" minOccurs="0">
+														<xs:simpleType>
+															<xs:restriction base="xs:string">
+																<xs:minLength value="2"/>
+																<xs:maxLength value="2"/>
+															</xs:restriction>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="directions" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="512"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="phone" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>The patient's home phone number</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="prefix" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Prefix to be used with the number. E.g. 18002 for typetalk.</xs:documentation>
+											</xs:annotation>
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="6"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="number">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="23"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="extension" minOccurs="0">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="0"/>
+													<xs:maxLength value="6"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="gender">
+								<xs:annotation>
+									<xs:documentation>Male,Female,Unknown,Not Specified</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Male"/>
+										<xs:enumeration value="Female"/>
+										<xs:enumeration value="Unknown"/>
+										<xs:enumeration value="Not Specified"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="nationalNumber" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>NHS Number for England, CHI for Scotland etc</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="20"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="providerDetails" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="provider" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Patient's provider.  E.g. Their doctor or dentist etc</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string">
+														<xs:annotation>
+															<xs:documentation>Provider's name</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="id">
+														<xs:annotation>
+															<xs:documentation>The unique id for this provider.  For doctors this should be the GMC number.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="providerGroup">
+											<xs:annotation>
+												<xs:documentation>Patient's provider group.  E.g dental surgery or doctor's surgery</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="name" type="xs:string">
+														<xs:annotation>
+															<xs:documentation>Provider Group name</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="id">
+														<xs:annotation>
+															<xs:documentation>The unique id for this provider group.  For surgeries this should be the OCS code.</xs:documentation>
+														</xs:annotation>
+														<xs:simpleType>
+															<xs:restriction base="xs:string"/>
+														</xs:simpleType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="type" use="required">
+										<xs:annotation>
+											<xs:documentation>Currently the type can only be Doctors.</xs:documentation>
+										</xs:annotation>
+										<xs:simpleType>
+											<xs:restriction base="xs:string">
+												<xs:enumeration value="DOCTOR"/>
+											</xs:restriction>
+										</xs:simpleType>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="dateOfBirth" minOccurs="0">
+								<xs:complexType>
+									<xs:choice>
+										<xs:element name="dob">
+											<xs:annotation>
+												<xs:documentation>Date of Birth</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:simpleContent>
+													<xs:extension base="xs:date"/>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="age">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="years" type="xs:int"/>
+													<xs:element name="months" type="xs:int" minOccurs="0"/>
+													<xs:element name="days" type="xs:int" minOccurs="0"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:choice>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="mobilePhone" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="15"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="returnPhone">
+					<xs:annotation>
+						<xs:documentation>The phone number which the operator should use to return the call. This can be patient's / caller / third number provided during the triage.</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="prefix" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Prefix to be used with the number. E.g. 18002 for typetalk.</xs:documentation>
+								</xs:annotation>
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="6"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="number">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="23"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="extension" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="6"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="billingAddress" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>The billing address registered with the phone making the call</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="building">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="55"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="street">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="55"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="locality">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="55"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="town">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="55"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="county">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="55"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="postcode">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="15"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="mapRef" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="longitude" minOccurs="0"/>
+										<xs:element name="latitude" minOccurs="0"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="country" minOccurs="0">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string"/>
+										<xs:element name="isoAlpha2">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:minLength value="2"/>
+													<xs:maxLength value="2"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="directions" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="512"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="pathwayDetails" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="pathwayTriageDetails">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="pathwayTriage">
+											<xs:annotation>
+												<xs:documentation>individual pathway session</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="start" type="xs:dateTime">
+														<xs:annotation>
+															<xs:documentation>The start time of this pathway session</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="finish" type="xs:dateTime" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>The completion time of this pathway session</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="triageDisposition" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Dispisition reached at the end of the triage, as recommended by the system.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="initialDispCode" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>The Disposition code associated with the Triage Disposition</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="initialDispText" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>The Disposition text associated with the Triage Disposition</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="timeReached" type="xs:dateTime">
+																	<xs:annotation>
+																		<xs:documentation>The first time the disposition was reached</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="finalDisposition" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>Final Disposition reached in this triage.  This may be different to the triageDisposition element if the user has overridden the system.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="finalDispCode" type="xs:string"/>
+																<xs:element name="finalDisptext" type="xs:string"/>
+																<xs:element name="override" minOccurs="0">
+																	<xs:annotation>
+																		<xs:documentation>If the disposition has been overridden then the override reason needs to be specified.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="Higher"/>
+																			<xs:enumeration value="Lower"/>
+																			<xs:enumeration value="CallerUnlikelyToFollow"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="transferCodeDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence maxOccurs="unbounded">
+																<xs:element name="transferCode">
+																	<xs:annotation>
+																		<xs:documentation>Details of the transfer code for each skill set in case someone needs to continue
+with the triage from this point</xs:documentation>
+																	</xs:annotation>
+																	<xs:complexType>
+																		<xs:simpleContent>
+																			<xs:extension base="xs:string">
+																				<xs:attribute name="type" use="required">
+																					<xs:annotation>
+																						<xs:documentation>Enumerated list specfying the codes T1,T2,T3 and T4.</xs:documentation>
+																					</xs:annotation>
+																					<xs:simpleType>
+																						<xs:restriction base="xs:string">
+																							<xs:enumeration value="T1">
+																								<xs:annotation>
+																									<xs:documentation>Call Handlers Out of Hours</xs:documentation>
+																								</xs:annotation>
+																							</xs:enumeration>
+																							<xs:enumeration value="T2">
+																								<xs:annotation>
+																									<xs:documentation>Clinician Out of Hours</xs:documentation>
+																								</xs:annotation>
+																							</xs:enumeration>
+																							<xs:enumeration value="T3">
+																								<xs:annotation>
+																									<xs:documentation>Call Handler 999 and 111</xs:documentation>
+																								</xs:annotation>
+																							</xs:enumeration>
+																							<xs:enumeration value="T4">
+																								<xs:annotation>
+																									<xs:documentation>Clinician 999 and 111</xs:documentation>
+																								</xs:annotation>
+																							</xs:enumeration>
+																						</xs:restriction>
+																					</xs:simpleType>
+																				</xs:attribute>
+																			</xs:extension>
+																		</xs:simpleContent>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="systemFlags" minOccurs="0">
+														<xs:annotation>
+															<xs:documentation>The systemFlags set as part of this traige</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence maxOccurs="unbounded">
+																<xs:element name="systemFlag">
+																	<xs:annotation>
+																		<xs:documentation>Enumerated List specifying the category of the incident like Fire, Trauma etc.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="Trauma"/>
+																			<xs:enumeration value="NonTrauma"/>
+																			<xs:enumeration value="SceneSafe"/>
+																			<xs:enumeration value="SceneUnsafe"/>
+																			<xs:enumeration value="Police"/>
+																			<xs:enumeration value="Fire"/>
+																			<xs:enumeration value="CATALevel1"/>
+																			<xs:enumeration value="CATALevel2"/>
+																			<xs:enumeration value="CATALevel3"/>
+																			<xs:enumeration value="CATALevel4"/>
+																			<xs:enumeration value="CATBLevel1"/>
+																			<xs:enumeration value="CATBLevel2"/>
+																			<xs:enumeration value="CATBLevel3"/>
+																			<xs:enumeration value="CATBLevel4"/>
+																			<xs:enumeration value="Trapped"/>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="user">
+														<xs:annotation>
+															<xs:documentation>Operator/User who carried out this pathway triage</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="id" type="xs:string">
+																	<xs:annotation>
+																		<xs:documentation>e.g. Login id</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="name" type="xs:string"/>
+																<xs:element name="skillSet">
+																	<xs:annotation>
+																		<xs:documentation>Enumerated list specfying the codes T1,T2,T3 and T4.</xs:documentation>
+																	</xs:annotation>
+																	<xs:simpleType>
+																		<xs:restriction base="xs:string">
+																			<xs:enumeration value="T1">
+																				<xs:annotation>
+																					<xs:documentation>Call Handlers Out of Hours</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																			<xs:enumeration value="T2">
+																				<xs:annotation>
+																					<xs:documentation>Clinician Out of Hours</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																			<xs:enumeration value="T3">
+																				<xs:annotation>
+																					<xs:documentation>Call Handler 999 and 111</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																			<xs:enumeration value="T4">
+																				<xs:annotation>
+																					<xs:documentation>Clinician 999 and 111</xs:documentation>
+																				</xs:annotation>
+																			</xs:enumeration>
+																		</xs:restriction>
+																	</xs:simpleType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="triageLineDetails" minOccurs="0">
+														<xs:complexType>
+															<xs:sequence maxOccurs="unbounded">
+																<xs:element name="triageLine">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="start" type="xs:dateTime"/>
+																			<xs:element name="finish" type="xs:dateTime"/>
+																			<xs:element name="questionType">
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="PathwaysSelection"/>
+																						<xs:enumeration value="MultipleChoice"/>
+																						<xs:enumeration value="SingleAnswer"/>
+																						<xs:enumeration value="Disposition"/>
+																						<xs:enumeration value="HomeCareAdvice"/>
+																						<xs:enumeration value="InterimCareAdvice"/>
+																						<xs:enumeration value="SetVariable"/>
+																						<xs:enumeration value="QueryVariable"/>
+																						<xs:enumeration value="CMS Lookup"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="question" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Only present if the questionType is multipleChoice or singleAnswer</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="triageLogicId">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="pathwayVersion">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="major" type="xs:int"/>
+																												<xs:element name="minor" type="xs:int"/>
+																												<xs:element name="subRevision" type="xs:int"/>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																									<xs:element name="pathwayId" type="xs:string"/>
+																									<xs:element name="pathwayOrderNo" type="xs:string"/>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="questionId" type="xs:string">
+																							<xs:annotation>
+																								<xs:documentation>e.g. Cx01 or Dx02 or Tx01</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="questionText" type="xs:string"/>
+																						<xs:element name="questionRationale" type="xs:string" minOccurs="0"/>
+																						<xs:element name="answers">
+																							<xs:annotation>
+																								<xs:documentation>Details of all answers available as a result of this question</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:sequence maxOccurs="unbounded">
+																									<xs:element name="answer">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="text" type="xs:string"/>
+																												<xs:element name="rationale" type="xs:string"/>
+																											</xs:sequence>
+																											<xs:attribute name="selected" type="xs:boolean" use="required"/>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																						<xs:element name="dispositionRationale" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Provides the rationale for why a particular disposition has been reached.</xs:documentation>
+																							</xs:annotation>
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="term" type="xs:string"/>
+																									<xs:element name="code" type="xs:string">
+																										<xs:annotation>
+																											<xs:documentation>snomed code</xs:documentation>
+																										</xs:annotation>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="careAdviceKeywordDetails" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Only present for Tx questions</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence maxOccurs="unbounded">
+																						<xs:element name="careAdviceKeyword" type="xs:string"/>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="dispositionInstruction" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Only present for non-inline dispositions</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="id" type="xs:string">
+																							<xs:annotation>
+																								<xs:documentation>The CxID for this Disposition Instruction</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																						<xs:element name="itemDetails">
+																							<xs:complexType>
+																								<xs:sequence maxOccurs="unbounded">
+																									<xs:element name="item">
+																										<xs:complexType>
+																											<xs:sequence>
+																												<xs:element name="id" type="xs:string">
+																													<xs:annotation>
+																														<xs:documentation>The itemNo for this Care Advice Item</xs:documentation>
+																													</xs:annotation>
+																												</xs:element>
+																												<xs:element name="text" type="xs:string"/>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="careAdviceDetails" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Only present if the triageline is for the care advice screen at the end of the triage</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence maxOccurs="unbounded">
+																						<xs:element name="careAdvice">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="id" type="xs:string">
+																										<xs:annotation>
+																											<xs:documentation>The CxID for this Care Advice</xs:documentation>
+																										</xs:annotation>
+																									</xs:element>
+																									<xs:element name="topic" type="xs:string"/>
+																									<xs:element name="itemDetails">
+																										<xs:complexType>
+																											<xs:sequence maxOccurs="unbounded">
+																												<xs:element name="item">
+																													<xs:complexType>
+																														<xs:sequence>
+																															<xs:element name="id" type="xs:string">
+																																<xs:annotation>
+																																	<xs:documentation>The itemNo for this Care Advice Item</xs:documentation>
+																																</xs:annotation>
+																															</xs:element>
+																															<xs:element name="text" type="xs:string"/>
+																														</xs:sequence>
+																													</xs:complexType>
+																												</xs:element>
+																											</xs:sequence>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="clinicalArea" type="xs:string" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>The clinical/bodyarea selected on the pathways selection screen.  this field is only present if the questionType is PathwaysSelection</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="reportText">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="text" type="xs:string"/>
+																						<xs:element name="positive" type="xs:boolean" minOccurs="0">
+																							<xs:annotation>
+																								<xs:documentation>Indicates whether this reportText represents a positive answer to a particular question.  Only present for Tx questions.</xs:documentation>
+																							</xs:annotation>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																			<xs:element name="userComment" type="xs:string" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Any user comments made as part of this triage line</xs:documentation>
+																				</xs:annotation>
+																			</xs:element>
+																			<xs:element name="action">
+																				<xs:annotation>
+																					<xs:documentation>The action taken as part of this question.</xs:documentation>
+																				</xs:annotation>
+																				<xs:simpleType>
+																					<xs:restriction base="xs:string">
+																						<xs:enumeration value="End"/>
+																						<xs:enumeration value="Next"/>
+																						<xs:enumeration value="Change"/>
+																						<xs:enumeration value="Restart"/>
+																						<xs:enumeration value="EarlyExit"/>
+																						<xs:enumeration value="Back"/>
+																					</xs:restriction>
+																				</xs:simpleType>
+																			</xs:element>
+																			<xs:element name="includeInReport" type="xs:boolean"/>
+																			<xs:element name="systemFlags" minOccurs="0">
+																				<xs:annotation>
+																					<xs:documentation>Indicates the state of all system flags set so far at the point of leaving this particular triage line</xs:documentation>
+																				</xs:annotation>
+																				<xs:complexType>
+																					<xs:sequence maxOccurs="unbounded">
+																						<xs:element name="systemFlag">
+																							<xs:simpleType>
+																								<xs:restriction base="xs:string">
+																									<xs:enumeration value="Trauma"/>
+																									<xs:enumeration value="NonTrauma"/>
+																									<xs:enumeration value="SceneSafe"/>
+																									<xs:enumeration value="SceneUnsafe"/>
+																									<xs:enumeration value="Police"/>
+																									<xs:enumeration value="Fire"/>
+																									<xs:enumeration value="CATALevel1"/>
+																									<xs:enumeration value="CATALevel2"/>
+																									<xs:enumeration value="CATALevel3"/>
+																									<xs:enumeration value="CATALevel4"/>
+																									<xs:enumeration value="CATBLevel1"/>
+																									<xs:enumeration value="CATBLevel2"/>
+																									<xs:enumeration value="CATBLevel3"/>
+																									<xs:enumeration value="CATBLevel4"/>
+																									<xs:enumeration value="Trapped"/>
+																								</xs:restriction>
+																							</xs:simpleType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="origSite">
+														<xs:annotation>
+															<xs:documentation>Details of which site carried out this pathway triage.</xs:documentation>
+														</xs:annotation>
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="siteId" type="xs:string"/>
+																<xs:element name="siteName" type="xs:string"/>
+																<xs:element name="caseId" type="xs:string"/>
+																<xs:element name="pathwaysContentVersion">
+																	<xs:annotation>
+																		<xs:documentation>This is the version of Pathways Content used by the provider software.</xs:documentation>
+																	</xs:annotation>
+																</xs:element>
+																<xs:element name="software">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="productName" type="xs:string"/>
+																			<xs:element name="version" type="xs:string"/>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="callerIsPatient" type="xs:boolean">
+														<xs:annotation>
+															<xs:documentation>Indicates whether this consultation was carried out with the patient on the phone or a third party</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="demographics">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="gender">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Male"/>
+													<xs:enumeration value="Female"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+										<xs:element name="ageGroup">
+											<xs:simpleType>
+												<xs:restriction base="xs:string">
+													<xs:enumeration value="Adult"/>
+													<xs:enumeration value="Child"/>
+													<xs:enumeration value="Toddler"/>
+													<xs:enumeration value="Infant"/>
+													<xs:enumeration value="Neonate"/>
+												</xs:restriction>
+											</xs:simpleType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="sharedCaseId" type="xs:string"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="site">
+					<xs:annotation>
+						<xs:documentation>The sending sites details</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="id">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:maxLength value="10"/>
+										<xs:minLength value="0"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="name">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:minLength value="0"/>
+										<xs:maxLength value="50"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

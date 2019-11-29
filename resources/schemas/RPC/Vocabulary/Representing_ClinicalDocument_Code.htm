@@ -1,0 +1,227 @@
+<html
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+
+<style>
+<!--
+ p.MsoNormal
+	{mso-style-parent:"";
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+h1
+	{margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria","serif";
+	color:#365F91;
+	}
+h4
+	{margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria","serif";
+	color:#4F81BD;
+	font-style:italic}
+a:link
+	{color:blue;
+	text-decoration:underline;
+	}
+a:visited
+	{color:purple;
+	text-decoration:underline;
+	}
+p.MsoListParagraphCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:36.0pt;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	}
+-->
+</style>
+</head>
+
+<body lang=EN-GB link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<h1 align=center style='text-align:left'><font face="Arial" color="#000000">Format of the <span class=SpellE>ClinicalDocument.code</span></font></h1>
+
+<h4><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<span style="font-style: normal; text-decoration: underline">
+<font color="#000000">Single Concept</font></span></font></h4>
+
+<blockquote>
+	<p class=MsoNormal><font face="Arial" size="2">If a single concept is used, the 
+	XML element <b>code</b> will be populated as below:</font></p>
+	<blockquote>
+		<p class=MsoNormal>
+		<span style='line-height:115%;font-family:
+"Arial"; font-weight:700'><font size="2">&lt;code code=”<font color="#FF0000"><span class=SpellE>ConceptId</span></font>” 
+		<span
+class=SpellE>codeSystem</span>=”<font color="#FF0000">2.16.840.1.113883.2.1.3.2.4.15</font>” displayName=”<font color="#FF0000"><span
+class=SpellE>ConceptId</span> preferred term</font>”&gt;</font></span></p>
+	</blockquote>
+	<p class=MsoNormal><font face="Arial" size="2">For example, to represent an Ambulance Service Patient
+Summary Report, XML element <b>code</b> will be populated: </font></p>
+	<blockquote>
+		<p class=MsoNormal>
+		<span style='line-height:115%;font-family:
+"Arial"; font-weight:700'><font size="2">&lt;code code=<span style='color:black'>”</span><font color="#FF0000">312711000000101</font>”
+		<span class=SpellE>codeSystem</span>=”<font color="#FF0000">2.16.840.1.113883.2.1.3.2.4.15</font></a>”
+displayName=”<font color="#FF0000">Ambulance Service Patient Summary Report</font>”&gt;</font></span></p>
+	</blockquote>
+</blockquote>
+<h4><font face="Arial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<span style="font-style: normal; text-decoration: underline">
+<font color="#000000">Compositional Grammar Statement</font></span></font></h4>
+<blockquote>
+	<p class=MsoNormal><font face="Arial" size="2">If a compositional grammar statement is used, 
+	the XML element <b>code</b> will be populated as below:</font></p>
+	<blockquote>
+		<p class=MsoNormal>
+		<span style='line-height:115%;font-family:
+"Arial"; font-weight:700'><font size="2">&lt;code code=”<font color="#FF0000"><span class=SpellE>CompositionalGramarStatement</span></font>”
+		<span class=SpellE>codeSystem</span>=”<font color="#FF0000">2.16.840.1.113883.2.1.3.2.4.15.1</font>”
+displayName=”<font color="#FF0000">Concatenation of 
+		<span
+class=SpellE>displayNames</span></font>”&gt;</font></span></p>
+	</blockquote>
+	<p class=MsoNormal><font face="Arial" size="2">The <span class=SpellE>CompositionalGramarStatement</span>
+will use 3 fixed concept ids as follows:</font></p>
+	<blockquote>
+		<p class=MsoNormal><font face="Arial" size="2"><b>810301000000103 | 
+		Clinical document descriptor
+(record artefact) [the ‘dummy object concept’].</b> </font></p>
+		<p class=MsoNormal><font face="Arial" size="2">This will be used to begin any
+compositional grammar statement in a XML <b>code</b> element.</font></p>
+		<p class=MsoNormal><b><font face="Arial" size="2">810311000000101 | Type of clinical document
+(attribute) [will carry the ‘document type’ value]</font></b></p>
+		<p class=MsoNormal><b><font face="Arial" size="2">810321000000107 | Care setting of clinical
+document (attribute) [will carry the ‘care setting’ value]</font></b></p>
+	</blockquote>
+	<p class=MsoNormal><font face="Arial" size="2">The <span class=SpellE>CompositionalGrammarStatement</span>
+will be in the following format (including the fixed concept ids), shown in
+bold below and conforming with the IHTSDO specification “Compositional Grammar 
+	for SNOMED CT Expressions in HL7 Version 3” </font></p>
+	<p class=MsoNormal><font face="Arial" size="2">(http://www.ihtsdo.org/fileadmin/user_upload/Docs_01/About_IHTSDO/Publications/CompositionalGrammar_20081223.pdf 
+	):</font></p>
+	<blockquote>
+		<p class=MsoNormal><font face="Arial" size="2">The compositional grammar MUST begin “<b><font color="#FF0000">810301000000103:</font></b>”, 
+		</font></p>
+		<p class=MsoNormal><font face="Arial" size="2">This followed by either Document Type or Care
+Setting (although BOTH MUST be present, these attributes can appear in any
+order). </font></p>
+		<p class=MsoNormal><font face="Arial" size="2">For consistency, it is recommended that the order Document Type followed
+by Care Setting is used.</font></p>
+		<p class=MsoNormal><font face="Arial" size="2">Document Type “<font color="#FF0000"><b>810311000000101</b></font><b>”=<span class="SpellE"><i>Correspondence Document Type Subset Member</i></span></b></font></p>
+		<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;margin-bottom:
+.0001pt;text-indent:-18.0pt;'>
+		<font face="Arial" size="2">The attribute separator comma “<b>,</b>”</font></p>
+	</blockquote>
+	<p class=MsoListParagraphCxSpMiddle style='margin-bottom:0cm;margin-bottom:
+.0001pt;text-indent:-18.0pt;'>
+	<font face="Arial" size="2">&nbsp;&nbsp;&nbsp;&nbsp; Care Setting 
+	”<b><font color="#FF0000">810321000000107</font>”</b><b>=</b><span class="SpellE"><b><i>C</i></b><i><b>orrespondence </b></i>
+	</span><b><span
+class=SpellE><i>CareSetting Subset Member</i></span></b></font></p>
+</blockquote>
+<blockquote>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2">For example,
+a Discharge summary report (25581000000101) from a Gynaecology service (310061009)
+would be represented in the XML element <b>code</b> as: </font></p>
+	<blockquote>
+		<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+		<span
+style='font-size:9.0pt;line-height:115%;font-family:"Arial"; font-weight:700'>&lt;code
+code=”<font color="#FF0000">810301000000103:810311000000101=25581000000101<span class=GramE>,810321000000107</span>=310061009</font>”&gt;</span></p>
+	</blockquote>
+</blockquote>
+
+<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+<font face="Arial"><b>Notes</b>: </font></p>
+<ul>
+	<li>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2">There MUST NOT be any white
+spaces included in the “on the wire” (i.e. transmitted) compositional grammar
+statement.</font></p></li>
+</ul>
+
+<blockquote>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2"><u><b>Populating the displayName attribute</b></u><br>
+	<br>
+	If the ClinicalDocument.code@code attribute is a single SNOMED concept id, 
+	then the displayName SHALL contain the preferred term of the used concept 
+	id.<br>
+	<br>
+	If the ClinicalDocument.code@code attribute is a compositional expression 
+	serialised using the SNOMED compositional grammar, then the displayName 
+	SHALL restate the Concept identifiers within the compositional grammar, 
+	together with each concept’s preferred term. For simplicity, the displayName 
+	SHOULD keep the concepts in the same order as they appear in the code. The 
+	preferred terms are carried using the optional ‘term’ convention – each 
+	prefixed and suffixed by a pipe (“|”) – as documented in “Compositional 
+	Grammar for SNOMED CT Expressions in HL7 Version 3 “ .<br>
+	Example: <br>
+	<b>&lt;code code=”<font color="#FF0000">810301000000103:810311000000101=373942005,810321000000107=394586005</font>”&gt;</b><br>
+&nbsp;</font></p>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2">would therefore have a corresponding displayName 
+	of</font></p>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2"><br>
+	&lt;<b>code displayName=”<font color="#FF0000">810301000000103|Clinical 
+	document descriptor|:810311000000101|Type of clinical 
+	document|=373942005|Discharge summary|,810321000000107|Care setting of 
+	clinical document|=394586005|Gynaecology|</font>”&gt;</b></font></p>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2"><br>
+	Putting whole example above together would give a compositional grammar 
+	statement for a ClinicalDocument.code of</font></p>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2"><br>
+	<b>&lt;code code=”<font color="#FF0000">810301000000103:810311000000101=373942005,810321000000107=394586005</font>” 
+	codeSystem=”<font color="#FF0000">2.16.840.1.113883.2.1.3.2.4.15.1</font></b>”
+	<b>displayName=”<font color="#FF0000">810301000000103|Clinical document 
+	descriptor|:810311000000101|Type of clinical document|=373942005|Discharge 
+	summary|,810321000000107|Care setting of clinical 
+	document|=394586005|Gynaecology|</font>”&gt;</b><br>
+&nbsp;</font></p>
+	<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'>
+	<font face="Arial" size="2">Whilst the restatement of Concept Identifiers 
+	would appear to extend the intended use of the displayName attribute, it is 
+	specified here in order to preserve a tight coupling between each Concept 
+	identifier and its corresponding preferred term.</font></p>
+</blockquote>
+
+<p class=MsoNormal><font face="Arial">&nbsp;</font></p>
+
+</div>
+
+</body>
+
+</html>

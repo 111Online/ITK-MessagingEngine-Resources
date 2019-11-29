@@ -1,0 +1,1283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>NHS 111: Vocabulary Usage</title>
+</head>
+
+<!-- Framework CSS -->
+<link rel="stylesheet" href="../Core/Stylesheets/screen.css" type="text/css" media="screen, projection">
+<link rel="stylesheet" href="../Core/Stylesheets/print.css" type="text/css" media="print">
+<!--[if lt IE 8]>
+<link rel="stylesheet" href="../Core/Stylesheets/ie.css" type="text/css" media="screen, projection">
+<![endif]-->
+</head>
+<body>
+<div class="d-mim-container">
+	<div id="banner">
+		<div class="d-mim-span-6 d-mim-left">
+			<img src="../Core/logo_left.png"/>
+		</div>
+		<div class="d-mim-span-12">
+			<h1><a name=_Toc_Section_></a>NHS 111<br>Domain Message 
+			Specification </h1>
+		</div>
+		<div class="d-mim-span-6 d-mim-last">
+			<img src="../Core/logo_right.jpg" class="d-mim-right">
+		</div>
+	</div>
+		<div id="navigation">
+		<div id="status">Version: 1.0; Status: RC2</div>
+		<ul class="tabs level0">
+			<li>
+			<a href="../Index.htm" title="Overview" >
+			Overview</a></li>
+			<li>
+			<a href="../Domains/NHS111/Document files/IM.htm" title="Message Definitions" >
+			Message Definitions</a>
+			
+			<li>
+			<a href="../Domains/NHS111/Document files/AssociatedSpecifications.htm" title="Associated Specifications" >
+			Associated Specifications</a></li>
+			
+			<li class="selected">
+			<a href="../Core/References.htm" title="References" >
+			References</a></li>
+
+		</ul>		
+		<ul class="tabs level1">
+		<li>		
+		<a href="../Data%20Types/DataTypesIndexPage.htm" title="Data Types" >
+		Data Types</a></li>
+
+			<li>
+				<a href="../Domains/Templates/Document files/Constraint Reference.htm" title="Constraint Usage" >
+				Constraint Usage</a>    
+			</li>
+			<li>
+				<a href="../Domains/Templates/Document files/Template Reference.htm" title="Template Usage" >
+				Template Usage</a>    
+			</li>
+<li class="selected">
+				<a title="Vocabulary Usage" href="NHS111VocabReferences.htm" >
+				Vocabulary Usage</a>    
+			</li>
+			<li>
+				<a title="Transforms" href="../Transforms/TransformsIndexPage.htm" >
+				Transforms</a>    
+			</li>			
+
+		</ul>
+
+	</div>
+	<div id="content"><h1>Vocabulary Usage</h1>
+	<div class="section">
+
+         <div class="section1_1">
+            <h2>Contents</h2><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_1" >1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ActStatus</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_2" >2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AmbulancePriorityType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_3" >3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AmbulanceRequestTypeSnCT</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_4" >4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AuthorFunctionType</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_5" >5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDADocumentTypeSnCT</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_6" >6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDAOrganizationProviderType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_7" >7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDAOrganizationType</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_8" >8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CDAPersonRelationshipType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_9" >9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DocumentConsentSnCT</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_10" >10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;EncounterDispositionSnCT</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_11" >11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HumanLanguage</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_12" >12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IncidentalLocationTypeSnCT</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_13" >13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JobRoleName</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_14" >14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LanguageAbilityMode</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_15" >15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LanguageAbilityProficiency</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_16" >16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ManufacturerModelName</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_17" >17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111AdditionalNotesType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_18" >18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111CDADocumentSectionType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_19" >19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111EncounterCode</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_20" >20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111MessageType</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_21" >21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111RepeatCallerServiceResponseType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_22" >22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NHS111TriageDeviceType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_23" >23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ParticipationFunction</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_24" >24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RoleCode</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_25" >25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sex</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_26" >26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SnomedCT</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_27" >27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SoftwareName</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_28" >28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SystemFlagType</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_29" >29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TriageDispositionType</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_30" >30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TriageOutcomeType</a><br>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_31" >31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WorkgroupRoleName</a><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="#_Toc_Section_32" >32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x_BasicConfidentialityKind</a></div>
+         <hr>
+         <div class="section1_2">
+            <h2><a name="_Toc_Section_1"></a>&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="ActStatus.htm" target="_blank">
+			ActStatus</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB02.htm" target="_blank">
+						COCD_TP146226GB02</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB02-NoEdit.htm#Consent" target="_blank">
+						Consent</a></td>
+                     <td>statusCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_2"></a>&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="AmbulancePriorityType.htm" target="_blank">
+			AmbulancePriorityType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TriageOutcome" target="_blank">
+						TriageOutcome</a></td>
+                     <td>value</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_3"></a>&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="AmbulanceRequestTypeSnCT.htm" target="_blank">
+			AmbulanceRequestTypeSnCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#AmbulanceRequest" target="_blank">
+						AmbulanceRequest</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_4"></a>&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="AuthorFunctionType.htm" target="_blank">
+			AuthorFunctionType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB02.htm" target="_blank">
+						POCD_RM200001GB02</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB02-NoEdit.htm#ClinicalDocument/author" target="_blank">
+						author</a></td>
+                     <td>functionCode</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#AmbulanceRequest/author" target="_blank">
+						author</a></td>
+                     <td>functionCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1/author" target="_blank">
+						author</a></td>
+                     <td>functionCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_5"></a>&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="CDADocumentTypeSnCT.htm" target="_blank">
+			CDADocumentTypeSnCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB02.htm" target="_blank">
+						POCD_RM200001GB02</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB02-NoEdit.htm#ClinicalDocument" target="_blank">
+						ClinicalDocument</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB02.htm" target="_blank">
+						POCD_RM200001GB02</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB02-NoEdit.htm#ParentDocument" target="_blank">
+						ParentDocument</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_6"></a>&nbsp;&nbsp;6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="CDAOrganizationProviderType.htm" target="_blank">
+			CDAOrganizationProviderType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">
+						COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Organization" target="_blank">
+						Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_7"></a>&nbsp;&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="CDAOrganizationType.htm" target="_blank">
+			CDAOrganizationType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB02.htm" target="_blank">
+						COCD_TP145202GB02</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB02-NoEdit.htm#Organization" target="_blank">
+						Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB03.htm" target="_blank">
+						COCD_TP145203GB03</a></td>
+                     <td>RecipientOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145203GB03-NoEdit.htm#Organization" target="_blank">
+						Organization</a></td>
+                     <td>standardIndustryClassCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_8"></a>&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="CDAPersonRelationshipType.htm" target="_blank">
+			CDAPersonRelationshipType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03.htm" target="_blank">
+						COCD_TP145007UK03</a></td>
+                     <td>RelatedEntity</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145007UK03-NoEdit.htm#RelatedEntity" target="_blank">
+						RelatedEntity</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_9"></a>&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="DocumentConsentSnCT.htm" target="_blank">
+			DocumentConsentSnCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB02.htm" target="_blank">
+						COCD_TP146226GB02</a></td>
+                     <td>Consent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146226GB02-NoEdit.htm#Consent" target="_blank">
+						Consent</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_10"></a>&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="EncounterDispositionSnCT.htm" target="_blank">
+			EncounterDispositionSnCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TriageDisposition" target="_blank">
+						TriageDisposition</a></td>
+                     <td>value</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">
+						COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">
+						EncompassingEncounter</a></td>
+                     <td>dischargeDispositionCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_11"></a>&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="HumanLanguage.htm" target="_blank">
+			HumanLanguage</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">
+						COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">
+						LanguageCommunication</a></td>
+                     <td>languageCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_12"></a>&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="IncidentalLocationTypeSnCT.htm" target="_blank">
+			IncidentalLocationTypeSnCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB02.htm" target="_blank">
+						COCD_TP145222GB02</a></td>
+                     <td>IncidentalHealthCareFacilityUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145222GB02-NoEdit.htm#HealthCareFacility" target="_blank">
+						HealthCareFacility</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_13"></a>&nbsp;&nbsp;13&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="JobRoleName.htm" target="_blank">
+			JobRoleName</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01.htm" target="_blank">
+						COCD_TP145200GB01</a></td>
+                     <td>AuthorPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145200GB01-NoEdit.htm#AssignedAuthor" target="_blank">
+						AssignedAuthor</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB02.htm" target="_blank">
+						COCD_TP145202GB02</a></td>
+                     <td>RecipientPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145202GB02-NoEdit.htm#IntendedRecipient" target="_blank">
+						IntendedRecipient</a></td>
+                     <td>recipientRoleCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01.htm" target="_blank">
+						COCD_TP145208GB01</a></td>
+                     <td>AuthorNonNamedPersonUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145208GB01-NoEdit.htm#AssignedAuthor" target="_blank">
+						AssignedAuthor</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01.htm" target="_blank">
+						COCD_TP145210GB01</a></td>
+                     <td>PersonWithOrganizationUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145210GB01-NoEdit.htm#AssignedEntity" target="_blank">
+						AssignedEntity</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_14"></a>&nbsp;&nbsp;14&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="LanguageAbilityMode.htm" target="_blank">
+			LanguageAbilityMode</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">
+						COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">
+						LanguageCommunication</a></td>
+                     <td>modeCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_15"></a>&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="LanguageAbilityProficiency.htm" target="_blank">
+			LanguageAbilityProficiency</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">
+						COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#LanguageCommunication" target="_blank">
+						LanguageCommunication</a></td>
+                     <td>proficiencyLevelCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_16"></a>&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="ManufacturerModelName.htm" target="_blank">
+			ManufacturerModelName</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01.htm" target="_blank">
+						COCD_TP145000GB01</a></td>
+                     <td>NHS111TriageDevice</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01-NoEdit.htm#Device" target="_blank">
+						Device</a></td>
+                     <td>manufacturerModelName</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">
+						COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AuthoringDevice" target="_blank">
+						AuthoringDevice</a></td>
+                     <td>manufacturerModelName</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_17"></a>&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111AdditionalNotesType.htm" target="_blank">
+			NHS111AdditionalNotesType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#AdditionalNotes" target="_blank">
+						AdditionalNotes</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_18"></a>&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111CDADocumentSectionType.htm" target="_blank">
+			NHS111CDADocumentSectionType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section2" target="_blank">
+						Section2</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section3" target="_blank">
+						Section3</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section1" target="_blank">
+						Section1</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section4" target="_blank">
+						Section4</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section5" target="_blank">
+						Section5</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01.htm" target="_blank">
+						COCD_TP146246GB01</a></td>
+                     <td>NHS111TextSection</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146246GB01-NoEdit.htm#Section6" target="_blank">
+						Section6</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_19"></a>&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111EncounterCode.htm" target="_blank">
+			NHS111EncounterCode</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01.htm" target="_blank">
+						COCD_TP146232GB01</a></td>
+                     <td>EncompassingEncounter</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146232GB01-NoEdit.htm#EncompassingEncounter" target="_blank">
+						EncompassingEncounter</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_20"></a>&nbsp;&nbsp;20&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111MessageType.htm" target="_blank">
+			NHS111MessageType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/PRPA_RM000001GB01.htm" target="_blank">
+						PRPA_RM000001GB01</a></td>
+                     <td>RepeatCallerResponse</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/PRPA_HD000001GB01-NoEdit.htm#RepeatCallerResponse" target="_blank">
+						RepeatCallerResponse</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/QUPA_RM000001GB01.htm" target="_blank">
+						QUPA_RM000001GB01</a></td>
+                     <td>RepeatCallerQuery</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/QUPA_HD000001GB01-NoEdit.htm#RepeatCallerQuery" target="_blank">
+						RepeatCallerQuery</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_21"></a>&nbsp;&nbsp;21&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111RepeatCallerServiceResponseType.htm" target="_blank">
+			NHS111RepeatCallerServiceResponseType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/PRPA_RM000001GB01.htm" target="_blank">
+						PRPA_RM000001GB01</a></td>
+                     <td>RepeatCallerResponse</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/PRPA_HD000001GB01-NoEdit.htm#RepeatCallerResponse" target="_blank">
+						RepeatCallerResponse</a></td>
+                     <td>value</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_22"></a>&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="NHS111TriageDeviceType.htm" target="_blank">
+			NHS111TriageDeviceType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01.htm" target="_blank">
+						COCD_TP145000GB01</a></td>
+                     <td>NHS111TriageDevice</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01-NoEdit.htm#ParticipantRole" target="_blank">
+						ParticipantRole</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_23"></a>&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="ParticipationFunction.htm" target="_blank">
+			ParticipationFunction</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB02.htm" target="_blank">
+						POCD_RM200001GB02</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB02-NoEdit.htm#ClinicalDocument/participant" target="_blank">
+						participant</a></td>
+                     <td>functionCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB02.htm" target="_blank">
+						COCD_TP146227GB02</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB02-NoEdit.htm#ServiceEvent/performer" target="_blank">
+						performer</a></td>
+                     <td>functionCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_24"></a>&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="RoleCode.htm" target="_blank">
+			RoleCode</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01.htm" target="_blank">
+						COCD_TP145214GB01</a></td>
+                     <td>DocumentParticipantUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145214GB01-NoEdit.htm#AssociatedEntity" target="_blank">
+						AssociatedEntity</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_25"></a>&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="Sex.htm" target="_blank">
+			Sex</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01.htm" target="_blank">
+						COCD_TP145201GB01</a></td>
+                     <td>PatientUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145201GB01-NoEdit.htm#Patient" target="_blank">
+						Patient</a></td>
+                     <td>administrativeGenderCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_26"></a>&nbsp;&nbsp;26&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="SnomedCT.htm" target="_blank">
+			SnomedCT</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB02.htm" target="_blank">
+						COCD_TP146227GB02</a></td>
+                     <td>ServiceEvent</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP146227GB02-NoEdit.htm#ServiceEvent" target="_blank">
+						ServiceEvent</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_27"></a>&nbsp;&nbsp;27&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="SoftwareName.htm" target="_blank">
+			SoftwareName</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01.htm" target="_blank">
+						COCD_TP145000GB01</a></td>
+                     <td>NHS111TriageDevice</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145000GB01-NoEdit.htm#Device" target="_blank">
+						Device</a></td>
+                     <td>softwareName</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01.htm" target="_blank">
+						COCD_TP145207GB01</a></td>
+                     <td>AuthorDeviceUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145207GB01-NoEdit.htm#AuthoringDevice" target="_blank">
+						AuthoringDevice</a></td>
+                     <td>softwareName</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_28"></a>&nbsp;&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="SystemFlagType.htm" target="_blank">
+			SystemFlagType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TraumaFlag" target="_blank">
+						TraumaFlag</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#FireFlag" target="_blank">
+						FireFlag</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#SceneSafeFlag" target="_blank">
+						SceneSafeFlag</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#PoliceFlag" target="_blank">
+						PoliceFlag</a></td>
+                     <td>code</td>
+                  </tr>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TrappedFlag" target="_blank">
+						TrappedFlag</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_29"></a>&nbsp;&nbsp;29&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="TriageDispositionType.htm" target="_blank">
+			TriageDispositionType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TriageDisposition" target="_blank">
+						TriageDisposition</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_30"></a>&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="TriageOutcomeType.htm" target="_blank">
+			TriageOutcomeType</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_RM200001GB02.htm" target="_blank">
+						REPC_RM200001GB02</a></td>
+                     <td>Ambulance Request</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/REPC_HD200001GB02-NoEdit.htm#TriageOutcome" target="_blank">
+						TriageOutcome</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_31"></a>&nbsp;&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="WorkgroupRoleName.htm" target="_blank">
+			WorkgroupRoleName</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB03.htm" target="_blank">
+						COCD_TP145204GB03</a></td>
+                     <td>RecipientWorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145204GB03-NoEdit.htm#RecipientWorkgroup" target="_blank">
+						RecipientWorkgroup</a></td>
+                     <td>recipientRoleCode</td>
+                  </tr>
+                  <tr>
+                     <td>Templates</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02.htm" target="_blank">
+						COCD_TP145212GB02</a></td>
+                     <td>WorkgroupUniversal</td>
+                     <td>
+						<a href="../Domains/Templates/Tabular%20View/COCD_TP145212GB02-NoEdit.htm#Workgroup" target="_blank">
+						Workgroup</a></td>
+                     <td>code</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+            <h2><a name="_Toc_Section_32"></a>&nbsp;&nbsp;32&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Vocabulary : 
+			<a href="x_BasicConfidentialityKind.htm" target="_blank">
+			x_BasicConfidentialityKind</a></h2>
+            <table>
+               <thead class="vocabheader">
+                  <tr>
+                     <td style="width: 20%">Domain</td>
+                     <td style="width: 15%">Model</td>
+                     <td style="width: 35%">Description</td>
+                     <td style="width: 20%">Class</td>
+                     <td style="width: 10%">Attribute</td>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <td>NHS111</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_RM200001GB02.htm" target="_blank">
+						POCD_RM200001GB02</a></td>
+                     <td>NHS 111 Report</td>
+                     <td>
+						<a href="../Domains/NHS111/Tabular%20View/POCD_HD200001GB02-NoEdit.htm#ClinicalDocument" target="_blank">
+						ClinicalDocument</a></td>
+                     <td>confidentialityCode</td>
+                  </tr>
+               </tbody>
+            </table>
+            <div></div>
+            <hr>
+         </div>
+      </div>
+       </div>
+      <div id="footer">
+	<div class="d-mim-span-8">Document Ref: NPFIT-FNT-TO-DSD-0214</div>
+	<div class="d-mim-span-8">CFH Interoperability Team:
+		<a href="mailto:CFH.interoperabilityteam@nhs.net" target="_blank">
+		Contact Us</a></a></div>
+	<div class="d-mim-span-8 d-mim-last">Release Date: 16-Mar-2012</div></div>
+
+   </body>
+</html>
